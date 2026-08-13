@@ -7,13 +7,18 @@ const observer=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if
 document.querySelectorAll('.reveal').forEach((element)=>observer.observe(element));
 const countObserver=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(!entry.isIntersecting)return;const element=entry.target;const target=Number(element.dataset.count);const suffix=element.dataset.suffix||'';const duration=1500;const start=performance.now();const animate=(now)=>{const progress=Math.min((now-start)/duration,1);const eased=1-Math.pow(1-progress,3);element.textContent=`${Math.round(target*eased)}${suffix}`;if(progress<1)requestAnimationFrame(animate)};requestAnimationFrame(animate);countObserver.unobserve(element)})},{threshold:.55});
 document.querySelectorAll('[data-count]').forEach((element)=>countObserver.observe(element));
-const slider=document.querySelector('[data-team-slider]');const track=slider?.querySelector('.impact__track');const cards=track?[...track.children]:[];let sliderIndex=0;let startX=0;let isPointerDown=false;
-const updateSlider=()=>{if(!slider||!track||!cards.length)return;const cardWidth=cards[0].getBoundingClientRect().width;const gap=36;sliderIndex=Math.max(0,Math.min(sliderIndex,cards.length-1));track.style.transform=`translateX(${-sliderIndex*(cardWidth+gap)}px)`};
-document.querySelector('[data-slider-next]')?.addEventListener('click',()=>{sliderIndex+=1;updateSlider()});
-document.querySelector('[data-slider-previous]')?.addEventListener('click',()=>{sliderIndex-=1;updateSlider()});
+const slider=document.querySelector('[data-team-slider]');const track=slider?.querySelector('.impact__track');const originalCards=track?[...track.children]:[];let sliderIndex=1;let startX=0;let isPointerDown=false;let loopTimer;
+if(track&&originalCards.length){const firstClone=originalCards[0].cloneNode(true);const lastClone=originalCards.at(-1).cloneNode(true);firstClone.setAttribute('aria-hidden','true');lastClone.setAttribute('aria-hidden','true');track.prepend(lastClone);track.append(firstClone)}
+const updateSlider=(animate=true)=>{if(!slider||!track||!originalCards.length)return;const cardWidth=track.children[0].getBoundingClientRect().width;const gap=36;track.style.transition=animate?'transform .65s cubic-bezier(.22,.61,.36,1)':'none';track.style.transform=`translateX(${-sliderIndex*(cardWidth+gap)}px)`};
+const normalizeLoop=()=>{clearTimeout(loopTimer);loopTimer=setTimeout(()=>{if(!track)return;if(sliderIndex===0){sliderIndex=originalCards.length;updateSlider(false)}if(sliderIndex===originalCards.length+1){sliderIndex=1;updateSlider(false)}},670)};
+const moveSlider=(direction,button)=>{sliderIndex+=direction;button?.classList.add('is-pressed');setTimeout(()=>button?.classList.remove('is-pressed'),180);updateSlider();normalizeLoop()};
+document.querySelector('[data-slider-next]')?.addEventListener('click',(event)=>moveSlider(1,event.currentTarget));
+document.querySelector('[data-slider-previous]')?.addEventListener('click',(event)=>moveSlider(-1,event.currentTarget));
 slider?.addEventListener('pointerdown',(event)=>{startX=event.clientX;isPointerDown=true;slider.setPointerCapture(event.pointerId)});
-slider?.addEventListener('pointerup',(event)=>{if(!isPointerDown)return;const moved=event.clientX-startX;if(Math.abs(moved)>45){sliderIndex+=moved<0?1:-1;updateSlider()}isPointerDown=false});
-slider?.addEventListener('keydown',(event)=>{if(event.key==='ArrowRight'){sliderIndex+=1;updateSlider()}if(event.key==='ArrowLeft'){sliderIndex-=1;updateSlider()}});
-window.addEventListener('resize',updateSlider);
+slider?.addEventListener('pointerup',(event)=>{if(!isPointerDown)return;const moved=event.clientX-startX;if(Math.abs(moved)>45)moveSlider(moved<0?1:-1);isPointerDown=false});
+slider?.addEventListener('keydown',(event)=>{if(event.key==='ArrowRight')moveSlider(1);if(event.key==='ArrowLeft')moveSlider(-1)});
+window.addEventListener('resize',()=>updateSlider(false));
+updateSlider(false);
+document.querySelector('.back-to-top')?.addEventListener('click',(event)=>{event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});history.replaceState(null,'','#inicio')});
 const form=document.querySelector('.contact-form');const status=document.querySelector('.form-status');
 form?.addEventListener('submit',async(event)=>{event.preventDefault();status.textContent='Enviando consulta…';const payload=Object.fromEntries(new FormData(form));try{const response=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});if(!response.ok)throw new Error('request');form.reset();status.textContent='Gracias. Nos pondremos en contacto contigo pronto.'}catch{status.textContent='No se pudo enviar. Escríbenos a info@laauxiliar.es'}});
