@@ -1,70 +1,832 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Envases, embalajes, impresión y troquelado en cartón corrugado.">
-  <title>Auxiliar Manipuladora del Cartón | Packaging que funciona</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="alternate icon" href="/favicon.ico">
-  <link rel="preconnect" href="https://images.unsplash.com">
-  <link rel="stylesheet" href="/css/reset.css"><link rel="stylesheet" href="/css/variables.css"><link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/components.css"><link rel="stylesheet" href="/css/responsive.css">
-  <style>
-    .impact-card__copy { min-height: 270px; padding-bottom: 24px; }
-    .impact-card__copy > span { font-size: .68rem; }
-    .impact-card h3 { font-size: 2.2rem; margin-bottom: 14px; }
-    .impact-card p { font-size: 1rem; line-height: 1.5; max-width: 380px; }
-    .impact-card img { width: 150px; height: 150px; border-radius: 50%; opacity: .84; cursor: pointer; transition: transform .35s ease, filter .35s ease, opacity .35s ease; }
-    .impact-card img:hover { transform: scale(1.07); filter: brightness(1.04); opacity: 1; }
-    .impact-card__phone { max-height: 0; margin-top: 0; opacity: 0; overflow: hidden; transform: translateY(-8px); transition: max-height .4s ease, margin-top .4s ease, opacity .4s ease, transform .4s ease; }
-    .impact-card.is-phone-visible .impact-card__phone { max-height: 40px; margin-top: 16px; opacity: 1; transform: translateY(0); }
-    .impact-card__phone a { color: var(--green); font-size: .9rem; font-weight: 700; }
-    .accordion summary { font-size: 1.08rem; }
-    .accordion__content p { font-size: .96rem; line-height: 1.65; }
-    .accordion summary span { display: grid; place-items: center; width: 28px; height: 28px; flex: 0 0 28px; }
-    .accordion summary svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; transition: transform .45s cubic-bezier(.22,.61,.36,1); }
-    .accordion details[open] summary svg { transform: rotate(90deg); }
-    .accordion__content { opacity: 0; transform: translateY(-8px); transition: grid-template-rows .5s cubic-bezier(.22,.61,.36,1), opacity .35s ease, transform .5s cubic-bezier(.22,.61,.36,1); }
-    .accordion details[open] .accordion__content { opacity: 1; transform: translateY(0); }
-    .accordion details.is-closing .accordion__content { grid-template-rows: 0fr; opacity: 0; transform: translateY(-8px); }
-    .accordion details.is-closing summary svg { transform: rotate(0deg); }
-    .accordion details.is-opening .accordion__content { grid-template-rows: 0fr; opacity: 0; transform: translateY(-8px); }
-    .accordion details.is-opening summary svg { transform: rotate(0deg); }
-    .accordion__content p { transition: padding-bottom .45s ease; }
-    .faq__title h2 + img { display: block; width: min(100%, 360px); height: auto; margin-top: 28px; border-radius: 12px; box-shadow: 0 14px 28px rgba(21, 33, 23, .1); }
-    .brand__logo { display: block; width: 132px; height: auto; }
-    .feature__image video { display: block; width: 100%; height: 100%; object-fit: cover; cursor: pointer; transition: opacity .45s ease, transform .45s cubic-bezier(.22,.61,.36,1); }
-    .feature__image.is-video-switching video { opacity: 0; transform: scale(1.025); }
-    .feature__image::after { pointer-events: none; }
-    @media (max-width: 800px) {
-      .accordion summary { font-size: 1rem; }
-      .accordion__content p { font-size: .92rem; }
-    }
-    @media (max-width: 800px) {
-      .impact-card__copy { min-height: 250px; }
-      .impact-card h3 { font-size: 1.95rem; }
-      .impact-card p { font-size: .92rem; }
-      .impact-card img { width: 125px; height: 125px; }
-    }
-  </style>
-</head>
-<body>
-  <header class="site-header" id="inicio"><div class="container nav-wrap">
-    <a class="brand" href="#inicio" aria-label="VerdeForma, inicio"><img class="brand__logo" src="/assets/logo-aux.svg" alt="VerdeForma"></a>
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
-    <nav class="nav" aria-label="Navegación principal"><a href="#soluciones">Soluciones</a><a href="#proceso">Proceso</a><a href="#empresa">Nosotros</a><a href="#contacto">Contacto</a><a class="nav__cta" href="#contacto">Solicitar presupuesto <span>→</span></a></nav>
-  </div></header>
-  <main>
-    <section class="hero"><div class="container hero__layout"><div class="hero__copy reveal"><p class="eyebrow">Cartón corrugado · Murcia</p><h1>Packaging que<br><em>trabaja contigo.</em></h1><p class="hero__lead">Fabricamos envases y embalajes de cartón corrugado que protegen tu producto, simplifican la logística y hacen reconocible tu marca.</p><div class="hero__actions"><a class="button button--dark" href="#contacto">Cuéntanos tu proyecto <span>→</span></a><a class="text-link" href="#soluciones">Ver soluciones</a></div></div><div class="hero__media reveal"><img src="/assets/nave.jpg" alt="Nave industrial de VerdeForma"><div class="media-tag"><span>01</span> Hecho para llegar lejos</div></div></div></section>
-    <section class="intro container section-pad"><p class="eyebrow reveal">Soluciones reales para productos reales</p><div class="intro__layout"><h2 class="reveal">Una caja no es<br>solo una caja.</h2><div class="intro__copy reveal"><p>Es la primera impresión de tu marca. La capa que protege lo importante. El punto en el que diseño, logística y producción tienen que entenderse.</p><a class="text-link" href="#empresa">Nuestra manera de trabajar <span>→</span></a></div></div></section>
-    <section class="metrics"><div class="container metrics__grid"><div class="metric reveal"><strong data-count="20" data-suffix="+">0</strong><span>Años creando packaging</span></div><div class="metric reveal"><strong data-count="4" data-suffix="">0</strong><span>Áreas para resolver tu proyecto</span></div><div class="metric reveal"><strong data-count="100" data-suffix="%">0</strong><span>Atención centrada en tus necesidades</span></div><div class="metric reveal"><strong data-count="1" data-suffix=" equipo">0</strong><span>Desde la idea hasta la entrega</span></div></div></section>
-    <section class="solutions section-pad" id="soluciones"><div class="container"><div class="section-heading reveal"><div><p class="eyebrow">Qué podemos hacer</p><h2>Todo lo que tu<br>producto necesita.</h2></div><p>Una fábrica próxima para una solución a medida, sin capas innecesarias.</p></div><div class="solutions__grid"><article class="solution-card solution-card--image reveal"><img src="https://images.unsplash.com/photo-1497339100210-9e87f7df8ee0?auto=format&fit=crop&w=1000&q=85" alt="Cajas de cartón apiladas"><div><span>01</span><h3>Envases a medida</h3><p>Formatos que encajan con tu producto y con tu marca.</p></div></article><article class="solution-card reveal"><span>02</span><h3>Embalaje<br>corrugado</h3><p>Resistencia, protección y eficiencia para el recorrido completo.</p><a href="#contacto" aria-label="Solicitar presupuesto de embalaje">→</a></article><article class="solution-card reveal"><span>03</span><h3>Impresión<br>que comunica</h3><p>Gráfica clara y acabados que añaden valor al instante.</p><a href="#contacto" aria-label="Solicitar presupuesto de impresión">→</a></article><article class="solution-card reveal"><span>04</span><h3>Troquelado<br>de precisión</h3><p>Estructuras especiales para ideas que no caben en lo estándar.</p><a href="#contacto" aria-label="Solicitar presupuesto de troquelado">→</a></article></div></div></section>
-    <section class="impact section-pad" id="equipo"><div class="container"><div class="impact__header reveal"><div><p class="eyebrow">El impacto de un buen equipo</p><h2>Personas que hacen<br>que todo encaje.</h2></div><div class="slider-controls" aria-label="Controles del equipo"><button class="slider-button" type="button" data-slider-previous aria-label="Ver perfil anterior">←</button><button class="slider-button" type="button" data-slider-next aria-label="Ver perfil siguiente">→</button></div></div></div><div class="impact__viewport" data-team-slider tabindex="0" aria-label="Perfiles del equipo. Desliza para ver más."><div class="impact__track"><article class="impact-card"><div class="impact-card__copy"><span>01 / Dirección</span><h3>Gerencia</h3><p>Da rumbo a cada decisión: une la visión de la empresa, las necesidades de los clientes y el trabajo de toda la fábrica.</p></div><img src="/assets/avatares/eL8UX.jpg" alt="Avatar del departamento de gerencia" tabindex="0"><div class="impact-card__phone"><a href="tel:+34968693575">+34 968 693 575</a></div></article><article class="impact-card"><div class="impact-card__copy"><span>02 / Operaciones</span><h3>Logística</h3><p>Coordina tiempos, materiales y entregas para que cada pedido llegue completo, protegido y cuando tiene que llegar.</p></div><img src="/assets/avatares/W9TSM.jpg" alt="Avatar del departamento de logística" tabindex="0"><div class="impact-card__phone"><a href="tel:+34968693575">+34 968 693 575</a></div></article><article class="impact-card"><div class="impact-card__copy"><span>03 / Creatividad</span><h3>Diseño</h3><p>Convierte las necesidades de un producto en estructuras útiles y una presencia gráfica que se reconoce a primera vista.</p></div><img src="/assets/avatares/x2DYN.jpg" alt="Avatar del departamento de diseño" tabindex="0"><div class="impact-card__phone"><a href="tel:+34968693575">+34 968 693 575</a></div></article><article class="impact-card"><div class="impact-card__copy"><span>04 / Coordinación</span><h3>Administración</h3><p>Hace que la relación sea clara y ágil: presupuestos, pedidos y seguimiento para que cada proyecto avance sin fricción.</p></div><img src="/assets/avatares/Z4j7S.jpg" alt="Avatar del departamento de administración" tabindex="0"><div class="impact-card__phone"><a href="tel:+34968693575">+34 968 693 575</a></div></article></div></div></section>
-    <section class="feature section-pad" id="proceso"><div class="container feature__grid"><div class="feature__image reveal"><video autoplay muted loop playsinline preload="auto" data-video-switchable aria-label="Cajas de cartón en movimiento"><source src="/assets/videos/cajas-en-movimiento.mp4" type="video/mp4">Tu navegador no admite la reproducción de vídeo.</video><p>Dentro de la fábrica <small>Vídeo de presentación</small></p></div><div class="feature__content reveal"><p class="eyebrow">Un proceso claro</p><h2>Menos fricción.<br><em>Más resultado.</em></h2><p>Convertimos requisitos técnicos, necesidades de transporte y objetivos de marca en packaging listo para producir.</p><ol><li><span>01</span> Escuchamos lo que necesita tu producto.</li><li><span>02</span> Diseñamos una solución funcional.</li><li><span>03</span> Producimos y acompañamos la entrega.</li></ol></div></div></section>
-    <section class="faq section-pad" id="empresa"><div class="container faq__layout"><div class="faq__title reveal"><p class="eyebrow">Sin letras pequeñas</p><h2>Todo claro,<br>desde el inicio.</h2><img src="/assets/cajab1.png" alt="Caja de cartón de VerdeForma"><p>Resolvemos las preguntas que suelen aparecer antes de arrancar un proyecto de packaging.</p></div><div class="accordion reveal"><details open><summary>¿Qué tipo de envases fabricáis?<span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m8 5 7 7-7 7"></path></svg></span></summary><div class="accordion__content"><p>Fabricamos cajas, bandejas, separadores, expositores y embalajes de cartón corrugado. Partimos del producto real, de su recorrido y de la forma en que debe llegar para crear una solución que proteja, encaje y funcione desde el primer día.</p></div></details><details><summary>¿Podéis imprimir mi diseño?<span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m8 5 7 7-7 7"></path></svg></span></summary><div class="accordion__content"><p>Sí. Revisamos tu diseño, los soportes y el acabado para que la gráfica no solo se vea bien, sino que también acompañe la estructura del envase. El resultado es un packaging reconocible, claro y coherente con tu marca.</p></div></details><details><summary>¿Trabajáis proyectos a medida?<span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m8 5 7 7-7 7"></path></svg></span></summary><div class="accordion__content"><p>Ese es nuestro punto de partida. Estudiamos medidas, resistencia, apilado, transporte y manipulación para convertir una necesidad concreta en una solución que ahorre espacio, evite problemas y haga más sencillo el trabajo diario.</p></div></details><details><summary>¿Dónde estáis ubicados?<span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m8 5 7 7-7 7"></path></svg></span></summary><div class="accordion__content"><p>Estamos en Lorquí, Murcia. Desde aquí acompañamos cada proyecto con una relación cercana: hablamos claro, coordinamos los tiempos y seguimos el pedido para que cada entrega llegue cuando toca.</p></div></details></div></div></section>
-    <section class="quote"><div class="container quote__inner reveal"><span class="quote__mark">“</span><p>El buen packaging se nota antes de abrirlo.</p><span class="quote__line"></span></div></section>
-    <section class="contact section-pad" id="contacto"><div class="container contact__layout"><div class="contact__intro reveal"><p class="eyebrow">Empezamos cuando quieras</p><h2>Hablemos de<br><em>tu próximo envase.</em></h2><p>Cuéntanos qué necesitas y te responderemos con una propuesta concreta.</p><div class="contact__details"><a href="tel:+34968693575">+34 968 693 575</a><a href="mailto:info@laauxiliar.es">info@laauxiliar.es</a><a class="location-link" href="https://www.google.com/maps/search/?api=1&query=Calle+Los+Mateos+1%2C+30564+Lorqu%C3%AD%2C+Murcia" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-13a7 7 0 1 0-14 0c0 6.9 7 13 7 13Z"></path><circle cx="12" cy="8" r="2.3"></circle></svg><span>C/ Los Mateos, 1 · 30564 Lorquí, Murcia</span></a></div></div><form class="contact-form reveal"><label>Nombre o empresa<input type="text" name="name" required placeholder="¿Con quién hablamos?"></label><label>Email<input type="email" name="email" required placeholder="tu@email.com"></label><label>Tu proyecto<textarea name="message" required rows="4" placeholder="Cuéntanos qué necesitas..."></textarea></label><button class="button button--yellow" type="submit">Enviar consulta <span>→</span></button><p class="form-status" role="status"></p></form></div></section>
-  </main>
-  <footer class="footer"><div class="container footer__inner"><a class="brand brand--footer" href="#inicio" aria-label="VerdeForma, inicio"><img class="brand__logo" src="/assets/logo-aux.svg" alt="VerdeForma"></a><p>Packaging hecho para funcionar.</p><span>© 2026 Auxiliar Manipulador del Cartón</span></div></footer>
-  <a class="back-to-top" href="#inicio" aria-label="Volver al inicio">↑<span>Inicio</span></a>
-  <script type="module" src="/js/main.js"></script>
-</body></html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Envases, embalajes, impresión y troquelado en cartón corrugado."
+		/>
+		<title>Auxiliar Manipuladora del Cartón | Packaging que funciona</title>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="alternate icon" href="/favicon.ico" />
+		<link rel="preconnect" href="https://images.unsplash.com" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="/css/reset.css" />
+		<link rel="stylesheet" href="/css/variables.css" />
+		<link rel="stylesheet" href="/css/base.css" />
+		<link rel="stylesheet" href="/css/components.css" />
+		<link rel="stylesheet" href="/css/responsive.css" />
+		<style>
+			.impact-card__copy {
+				min-height: 270px;
+				padding-bottom: 24px;
+			}
+			.impact-card__copy > span {
+				font-size: 0.68rem;
+			}
+			.impact-card h3 {
+				font-size: 2.2rem;
+				margin-bottom: 14px;
+			}
+			.impact-card p {
+				font-size: 1rem;
+				line-height: 1.5;
+				max-width: 380px;
+			}
+			.impact-card img {
+				align-self: center;
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				opacity: 0.84;
+				cursor: pointer;
+				transition:
+					transform 0.35s ease,
+					filter 0.35s ease,
+					opacity 0.35s ease;
+			}
+			.impact-card img:hover {
+				transform: scale(1.07);
+				filter: brightness(1.04);
+				opacity: 1;
+			}
+			.impact-card__phone {
+				align-self: center;
+				max-height: 0;
+				margin-top: 0;
+				opacity: 0;
+				overflow: hidden;
+				text-align: center;
+				width: 150px;
+				transform: translateY(-8px);
+				transition:
+					max-height 0.4s ease,
+					margin-top 0.4s ease,
+					opacity 0.4s ease,
+					transform 0.4s ease;
+			}
+			.impact-card.is-phone-visible .impact-card__phone {
+				max-height: 40px;
+				margin-top: 16px;
+				opacity: 1;
+				transform: translateY(0);
+			}
+			.impact-card:hover .impact-card__phone,
+			.impact-card:focus-within .impact-card__phone {
+				max-height: 40px;
+				margin-top: 16px;
+				opacity: 1;
+				transform: translateY(0);
+			}
+			.impact-card__phone a {
+				color: var(--green);
+				display: inline-block;
+				font-size: 1.2rem;
+				font-weight: 700;
+			}
+			.accordion summary {
+				font-size: 1.08rem;
+			}
+			.accordion__content p {
+				font-size: 0.96rem;
+				line-height: 1.65;
+			}
+			.accordion summary span {
+				display: grid;
+				place-items: center;
+				width: 28px;
+				height: 28px;
+				flex: 0 0 28px;
+			}
+			.accordion summary svg {
+				width: 18px;
+				height: 18px;
+				fill: none;
+				stroke: currentColor;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+				stroke-width: 1.8;
+				transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+			}
+			.accordion details[open] summary svg {
+				transform: rotate(90deg);
+			}
+			.accordion__content {
+				opacity: 0;
+				transform: translateY(-8px);
+				transition:
+					grid-template-rows 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+					opacity 0.35s ease,
+					transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+			}
+			.accordion details[open] .accordion__content {
+				opacity: 1;
+				transform: translateY(0);
+			}
+			.accordion details.is-closing .accordion__content {
+				grid-template-rows: 0fr;
+				opacity: 0;
+				transform: translateY(-8px);
+			}
+			.accordion details.is-closing summary svg {
+				transform: rotate(0deg);
+			}
+			.accordion details.is-opening .accordion__content {
+				grid-template-rows: 0fr;
+				opacity: 0;
+				transform: translateY(-8px);
+			}
+			.accordion details.is-opening summary svg {
+				transform: rotate(0deg);
+			}
+			.accordion__content p {
+				transition: padding-bottom 0.45s ease;
+			}
+			.faq__title h2 + img {
+				display: block;
+				width: min(100%, 360px);
+				height: auto;
+				margin-top: 28px;
+				border-radius: 12px;
+				box-shadow: 0 14px 28px rgba(21, 33, 23, 0.1);
+			}
+			.brand__logo {
+				display: block;
+				width: 132px;
+				height: auto;
+			}
+			.feature__image video {
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				cursor: pointer;
+				transition:
+					opacity 0.45s ease,
+					transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+			}
+			.feature__image.is-video-switching video {
+				opacity: 0;
+				transform: scale(1.025);
+			}
+			.feature__image::after {
+				pointer-events: none;
+			}
+			@media (max-width: 800px) {
+				.accordion summary {
+					font-size: 1rem;
+				}
+				.accordion__content p {
+					font-size: 0.92rem;
+				}
+			}
+			@media (max-width: 800px) {
+				.impact-card__copy {
+					min-height: 250px;
+				}
+				.impact-card h3 {
+					font-size: 1.95rem;
+				}
+				.impact-card p {
+					font-size: 0.92rem;
+				}
+				.impact-card img {
+					width: 125px;
+					height: 125px;
+				}
+				.impact-card__phone {
+					width: 125px;
+				}
+			}
+			.sustainability {
+				padding: clamp(4rem, 9vw, 7rem) 0;
+				background: #fff;
+				font-family: Outfit, Arial, sans-serif;
+				zoom: 0.85;
+			}
+			.sustainability__container {
+				width: min(1480px, calc(100% - 120px));
+				margin: 0 auto;
+			}
+			.sustainability__layout {
+				display: grid;
+				grid-template-columns: 1fr 1.15fr;
+				align-items: center;
+				gap: clamp(2rem, 6vw, 4.5rem);
+			}
+			.sustainability__media {
+				position: relative;
+			}
+			.sustainability__image {
+				display: block;
+				width: 100%;
+				aspect-ratio: 4 / 3;
+				object-fit: cover;
+				border: 1px solid #e7d9c2;
+				border-radius: 36px;
+				box-shadow: 0 20px 42px rgba(92, 58, 33, 0.12);
+				transition: transform 0.35s ease, box-shadow 0.35s ease;
+			}
+			.sustainability__media:hover .sustainability__image {
+				transform: translateY(-6px) rotate(-0.5deg);
+				box-shadow: 0 26px 52px rgba(92, 58, 33, 0.2);
+			}
+			.sustainability__badge {
+				position: absolute;
+				right: -1.5rem;
+				bottom: 1.6rem;
+				display: flex;
+				flex-direction: column;
+				gap: 0.15rem;
+				padding: 1.4rem 2rem;
+				background: #fffdf8;
+				border: 1px solid #e7d9c2;
+				border-radius: 28px;
+				box-shadow: 0 18px 38px rgba(92, 58, 33, 0.16);
+			}
+			.sustainability__badge strong,
+			.sustainability__metric-value {
+				color: #5c3a21;
+				font-size: 2rem;
+				font-weight: 700;
+				line-height: 1;
+			}
+			.sustainability__badge span,
+			.sustainability__metric-label {
+				color: #6b5d4e;
+				font-size: 1rem;
+			}
+			@keyframes sustainability-float {
+				0%,
+				100% {
+					transform: translateY(0);
+				}
+				50% {
+					transform: translateY(-10px);
+				}
+			}
+			.sustainability__badge {
+				animation: sustainability-float 5s ease-in-out infinite;
+			}
+			.sustainability__eyebrow {
+				display: inline-block;
+				margin-bottom: 0.6rem;
+				color: #c97b2d;
+				font-size: 0.78rem;
+				font-weight: 700;
+				letter-spacing: 0.14em;
+				text-transform: uppercase;
+			}
+			.sustainability h2 {
+				margin-bottom: 0.9rem;
+				color: #2f2418;
+				font-family: "Space Grotesk", Outfit, Arial, sans-serif;
+				font-size: clamp(2.25rem, 3vw, 2.5rem);
+				line-height: 1.05;
+			}
+			.sustainability__lead {
+				max-width: 36ch;
+				margin-bottom: 2rem;
+				color: #6b5d4e;
+				font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+				line-height: 1.65;
+			}
+			.sustainability__metrics {
+				display: grid;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				gap: 1.4rem;
+				margin-bottom: 2.5rem;
+			}
+			.sustainability__metric {
+				padding: 1.55rem 2rem;
+				background: #fffdf8;
+				border: 1px solid #e7d9c2;
+				border-radius: 28px;
+				box-shadow: 0 10px 22px rgba(92, 58, 33, 0.09);
+				transition: transform 0.35s ease, box-shadow 0.35s ease;
+			}
+			.sustainability__metric:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 16px 30px rgba(92, 58, 33, 0.14);
+			}
+			.sustainability__metric-value {
+				display: block;
+				margin-bottom: 0.3rem;
+				font-size: clamp(2.1rem, 3.3vw, 3rem);
+			}
+			.sustainability__cta {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				padding: 0.95rem 2.25rem;
+				color: #fff;
+				background: linear-gradient(120deg, #c97b2d, #8b5a2b);
+				border-radius: 999px;
+				box-shadow: 0 8px 22px rgba(201, 123, 45, 0.35);
+				font-size: 1rem;
+				font-weight: 700;
+				transition: transform 0.25s ease, box-shadow 0.25s ease;
+			}
+			.sustainability__cta:hover {
+				color: #fff;
+				transform: translateY(-2px);
+				box-shadow: 0 12px 30px rgba(201, 123, 45, 0.45);
+			}
+			@media (max-width: 800px) {
+				.sustainability__container {
+					width: min(100% - 40px, 640px);
+				}
+				.sustainability__layout {
+					grid-template-columns: 1fr;
+				}
+				.sustainability__badge {
+					right: 0.5rem;
+					bottom: 1rem;
+					padding: 1rem 1.25rem;
+				}
+			}
+			@media (max-width: 480px) {
+				.sustainability__metrics {
+					gap: 1rem;
+				}
+				.sustainability__metric {
+					padding: 1.2rem;
+				}
+			}
+			@media (prefers-reduced-motion: reduce) {
+				.sustainability__image {
+					transition: none;
+				}
+				.sustainability__badge {
+					animation: none;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header class="site-header" id="inicio">
+			<div class="container nav-wrap">
+				<a class="brand" href="#inicio" aria-label="VerdeForma, inicio"
+					><img class="brand__logo" src="/assets/logo-aux.svg" alt="VerdeForma"
+				/></a>
+				<button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+					<span></span><span></span>
+				</button>
+				<nav class="nav" aria-label="Navegación principal">
+					<a href="#soluciones">Soluciones</a><a href="#proceso">Proceso</a
+					><a href="#empresa">Nosotros</a><a href="#contacto">Contacto</a
+					><a class="nav__cta" href="#contacto"
+						>Solicitar presupuesto <span>→</span></a
+					>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<section class="hero">
+				<div class="container hero__layout">
+					<div class="hero__copy reveal">
+						<p class="eyebrow">Cartón corrugado · Murcia</p>
+						<h1>Una caja no es<br /><em>solo una caja.</em></h1>
+						<p class="hero__lead">
+							Fabricamos envases y embalajes de cartón corrugado que protegen tu
+							producto, simplifican la logística y hacen reconocible tu marca.
+						</p>
+						<div class="hero__actions">
+							<a class="button button--dark" href="#contacto"
+								>Cuéntanos tu proyecto <span>→</span></a
+							>
+						</div>
+					</div>
+					<div class="hero__media reveal">
+						<img src="/assets/nave.jpg" alt="Nave industrial de VerdeForma" />
+						<div class="media-tag"><span>01</span> Hecho para llegar lejos</div>
+					</div>
+				</div>
+			</section>
+			<section class="intro container section-pad">
+				<p class="eyebrow reveal">Soluciones reales para productos reales</p>
+				<div class="intro__layout">
+					<h2 class="reveal">Trabajamos<br />contigo.</h2>
+					<div class="intro__copy reveal">
+						<p>
+							Es la primera impresión de tu marca. La capa que protege lo importante.
+							El punto en el que diseño, logística y producción tienen que entenderse.
+						</p>
+						<a class="text-link" href="#empresa"
+							>Nuestra manera de trabajar <span>→</span></a
+						>
+					</div>
+				</div>
+			</section>
+			<section class="metrics">
+				<div class="container metrics__grid">
+					<div class="metric reveal">
+						<strong data-count="30" data-suffix="+">0</strong
+						><span>Años creando packaging</span>
+					</div>
+					<div class="metric reveal">
+						<strong data-count="4" data-suffix="">0</strong
+						><span>Áreas para resolver tu proyecto</span>
+					</div>
+					<div class="metric reveal">
+						<strong data-count="100" data-suffix="%">0</strong
+						><span>Atención centrada en tus necesidades</span>
+					</div>
+					<div class="metric reveal">
+						<strong data-count="1" data-suffix=" equipo">0</strong
+						><span>Desde la idea hasta la entrega</span>
+					</div>
+				</div>
+			</section>
+			<section class="solutions section-pad" id="soluciones">
+				<div class="container">
+					<div class="section-heading reveal">
+						<div>
+							<p class="eyebrow">Qué podemos hacer</p>
+							<h2>Todo lo que tu<br />producto necesita.</h2>
+						</div>
+						<p>
+							Una fábrica próxima para una solución a medida, sin capas innecesarias.
+						</p>
+					</div>
+					<div class="solutions__grid">
+						<article class="solution-card solution-card--image reveal">
+							<img
+								src="https://images.unsplash.com/photo-1497339100210-9e87f7df8ee0?auto=format&fit=crop&w=1000&q=85"
+								alt="Cajas de cartón apiladas"
+							/>
+							<div>
+								<span>01</span>
+								<h3>Envases a medida</h3>
+								<p>Formatos que encajan con tu producto y con tu marca.</p>
+							</div>
+						</article>
+						<article class="solution-card reveal">
+							<span>02</span>
+							<h3>Embalaje<br />corrugado</h3>
+							<p>Resistencia, protección y eficiencia para el recorrido completo.</p>
+							<a href="#contacto" aria-label="Solicitar presupuesto de embalaje">→</a>
+						</article>
+						<article class="solution-card reveal">
+							<span>03</span>
+							<h3>Impresión<br />que comunica</h3>
+							<p>Gráfica clara y acabados que añaden valor al instante.</p>
+							<a href="#contacto" aria-label="Solicitar presupuesto de impresión">→</a>
+						</article>
+						<article class="solution-card reveal">
+							<span>04</span>
+							<h3>Troquelado<br />de precisión</h3>
+							<p>Estructuras especiales para ideas que no caben en lo estándar.</p>
+							<a href="#contacto" aria-label="Solicitar presupuesto de troquelado"
+								>→</a
+							>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="impact section-pad" id="equipo">
+				<div class="container">
+					<div class="impact__header reveal">
+						<div>
+							<p class="eyebrow">El impacto de un buen equipo</p>
+							<h2>Personas que hacen<br />que todo encaje.</h2>
+						</div>
+						<div class="slider-controls" aria-label="Controles del equipo">
+							<button
+								class="slider-button"
+								type="button"
+								data-slider-previous
+								aria-label="Ver perfil anterior"
+							>
+								←</button
+							><button
+								class="slider-button"
+								type="button"
+								data-slider-next
+								aria-label="Ver perfil siguiente"
+							>
+								→
+							</button>
+						</div>
+					</div>
+				</div>
+				<div
+					class="impact__viewport"
+					data-team-slider
+					tabindex="0"
+					aria-label="Perfiles del equipo. Desliza para ver más."
+				>
+					<div class="impact__track">
+						<article class="impact-card">
+							<div class="impact-card__copy">
+								<span>01 / Dirección</span>
+								<h3>Gerencia</h3>
+								<p>
+									Da rumbo a cada decisión: une la visión de la empresa, las necesidades
+									de los clientes y el trabajo de toda la fábrica.
+								</p>
+							</div>
+							<img
+								src="/assets/avatares/eL8UX.jpg"
+								alt="Avatar del departamento de gerencia"
+								tabindex="0"
+							/>
+							<div class="impact-card__phone">
+								<a href="tel:666666666">666 666 666</a>
+							</div>
+						</article>
+						<article class="impact-card">
+							<div class="impact-card__copy">
+								<span>02 / Operaciones</span>
+								<h3>Logística</h3>
+								<p>
+									Coordina tiempos, materiales y entregas para que cada pedido llegue
+									completo, protegido y cuando tiene que llegar.
+								</p>
+							</div>
+							<img
+								src="/assets/avatares/W9TSM.jpg"
+								alt="Avatar del departamento de logística"
+								tabindex="0"
+							/>
+							<div class="impact-card__phone">
+								<a href="tel:555555555">555 555 555</a>
+							</div>
+						</article>
+						<article class="impact-card">
+							<div class="impact-card__copy">
+								<span>03 / Creatividad</span>
+								<h3>Diseño</h3>
+								<p>
+									Convierte las necesidades de un producto en estructuras útiles y una
+									presencia gráfica que se reconoce a primera vista.
+								</p>
+							</div>
+							<img
+								src="/assets/avatares/x2DYN.jpg"
+								alt="Avatar del departamento de diseño"
+								tabindex="0"
+							/>
+							<div class="impact-card__phone">
+								<a href="tel:333333333">333 333 333</a>
+							</div>
+						</article>
+						<article class="impact-card">
+							<div class="impact-card__copy">
+								<span>04 / Coordinación</span>
+								<h3>Administración</h3>
+								<p>
+									Hace que la relación sea clara y ágil: presupuestos, pedidos y
+									seguimiento para que cada proyecto avance sin fricción.
+								</p>
+							</div>
+							<img
+								src="/assets/avatares/Z4j7S.jpg"
+								alt="Avatar del departamento de administración"
+								tabindex="0"
+							/>
+							<div class="impact-card__phone">
+								<a href="tel:222222222">222 222 222</a>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="feature section-pad" id="proceso">
+				<div class="container feature__grid">
+					<div class="feature__image reveal">
+						<video
+							autoplay
+							muted
+							loop
+							playsinline
+							preload="auto"
+							data-video-switchable
+							aria-label="Cajas de cartón en movimiento"
+						>
+							<source src="/assets/videos/cajas-en-movimiento.mp4" type="video/mp4" />
+							Tu navegador no admite la reproducción de vídeo.
+						</video>
+						<p>Dentro de la fábrica <small>Vídeo de presentación</small></p>
+					</div>
+					<div class="feature__content reveal">
+						<p class="eyebrow">Un proceso claro</p>
+						<h2>Menos fricción.<br /><em>Más resultado.</em></h2>
+						<p>
+							Convertimos requisitos técnicos, necesidades de transporte y objetivos de
+							marca en packaging listo para producir.
+						</p>
+						<ol>
+							<li><span>01</span> Escuchamos lo que necesita tu producto.</li>
+							<li><span>02</span> Diseñamos una solución funcional.</li>
+							<li><span>03</span> Producimos y acompañamos la entrega.</li>
+						</ol>
+					</div>
+				</div>
+			</section>
+			<section class="faq section-pad" id="empresa">
+				<div class="container faq__layout">
+					<div class="faq__title reveal">
+						<p class="eyebrow">Sin letras pequeñas</p>
+						<h2>Todo claro,<br />desde el inicio.</h2>
+						<img src="/assets/cajab1.png" alt="Caja de cartón de VerdeForma" />
+						<p>
+							Resolvemos las preguntas que suelen aparecer antes de arrancar un
+							proyecto de packaging.
+						</p>
+					</div>
+					<div class="accordion reveal">
+						<details open>
+							<summary>
+								¿Qué tipo de envases fabricáis?<span
+									><svg aria-hidden="true" viewBox="0 0 24 24">
+										<path d="m8 5 7 7-7 7"></path></svg
+								></span>
+							</summary>
+							<div class="accordion__content">
+								<p>
+									Fabricamos cajas, bandejas, separadores, expositores y embalajes de
+									cartón corrugado. Partimos del producto real, de su recorrido y de la
+									forma en que debe llegar para crear una solución que proteja, encaje y
+									funcione desde el primer día.
+								</p>
+							</div>
+						</details>
+						<details>
+							<summary>
+								¿Podéis imprimir mi diseño?<span
+									><svg aria-hidden="true" viewBox="0 0 24 24">
+										<path d="m8 5 7 7-7 7"></path></svg
+								></span>
+							</summary>
+							<div class="accordion__content">
+								<p>
+									Sí. Revisamos tu diseño, los soportes y el acabado para que la gráfica
+									no solo se vea bien, sino que también acompañe la estructura del
+									envase. El resultado es un packaging reconocible, claro y coherente con
+									tu marca.
+								</p>
+							</div>
+						</details>
+						<details>
+							<summary>
+								¿Trabajáis proyectos a medida?<span
+									><svg aria-hidden="true" viewBox="0 0 24 24">
+										<path d="m8 5 7 7-7 7"></path></svg
+								></span>
+							</summary>
+							<div class="accordion__content">
+								<p>
+									Ese es nuestro punto de partida. Estudiamos medidas, resistencia,
+									apilado, transporte y manipulación para convertir una necesidad
+									concreta en una solución que ahorre espacio, evite problemas y haga más
+									sencillo el trabajo diario.
+								</p>
+							</div>
+						</details>
+						<details>
+							<summary>
+								¿Dónde estáis ubicados?<span
+									><svg aria-hidden="true" viewBox="0 0 24 24">
+										<path d="m8 5 7 7-7 7"></path></svg
+								></span>
+							</summary>
+							<div class="accordion__content">
+								<p>
+									Estamos en Lorquí, Murcia. Desde aquí acompañamos cada proyecto con una
+									relación cercana: hablamos claro, coordinamos los tiempos y seguimos el
+									pedido para que cada entrega llegue cuando toca.
+								</p>
+							</div>
+						</details>
+					</div>
+				</div>
+			</section>
+			<section class="quote">
+				<div class="container quote__inner reveal">
+					<span class="quote__mark">“</span>
+					<p>El buen packaging se nota antes de abrirlo.</p>
+					<span class="quote__line"></span>
+				</div>
+			</section>
+			<section class="sustainability" id="sostenibilidad">
+				<div class="sustainability__container">
+					<div class="sustainability__layout">
+						<div class="sustainability__media reveal">
+							<img
+								class="sustainability__image"
+								src="/assets/placeholder-factory.svg"
+								alt="Fábrica de cartón"
+							/>
+							<div class="sustainability__badge">
+								<strong>98%</strong>
+								<span>de nuestra materia prima es reciclada</span>
+							</div>
+						</div>
+						<div class="sustainability__content">
+							<header class="reveal">
+								<span class="sustainability__eyebrow">Sostenibilidad</span>
+								<h2>El cartón nace circular</h2>
+								<p class="sustainability__lead">
+									Creemos en un empaque que respeta el planeta. Por eso impulsamos el uso
+									de fibra reciclada, tintas al agua y procesos de bajo consumo energético.
+								</p>
+							</header>
+							<div class="sustainability__metrics">
+								<div class="sustainability__metric reveal">
+									<span class="sustainability__metric-value" data-count="98" data-suffix="%">0%</span>
+									<span class="sustainability__metric-label">Fibra reciclada</span>
+								</div>
+								<div class="sustainability__metric reveal">
+									<span class="sustainability__metric-value" data-count="120" data-suffix="M+">0</span>
+									<span class="sustainability__metric-label">Cajas al año</span>
+								</div>
+								<div class="sustainability__metric reveal">
+									<span class="sustainability__metric-value" data-count="34" data-suffix="k">0k</span>
+									<span class="sustainability__metric-label">m² producidos al mes</span>
+								</div>
+								<div class="sustainability__metric reveal">
+									<span class="sustainability__metric-value" data-count="140" data-suffix="+">0</span>
+									<span class="sustainability__metric-label">Colaboradores</span>
+								</div>
+							</div>
+							<a class="sustainability__cta reveal" href="#contacto">Hablemos de tu proyecto</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="contact section-pad" id="contacto">
+				<div class="container contact__layout">
+					<div class="contact__intro reveal">
+						<p class="eyebrow">Empezamos cuando quieras</p>
+						<h2>Hablemos de<br /><em>tu próximo envase.</em></h2>
+						<p>
+							Cuéntanos qué necesitas y te responderemos con una propuesta concreta.
+						</p>
+						<div class="contact__details">
+							<a href="tel:+34968693575">+34 968 693 575</a
+							><a href="mailto:info@laauxiliar.es">info@laauxiliar.es</a
+							><a
+								class="location-link"
+								href="https://www.google.com/maps/search/?api=1&query=Calle+Los+Mateos+1%2C+30564+Lorqu%C3%AD%2C+Murcia"
+								target="_blank"
+								rel="noopener noreferrer"
+								><svg aria-hidden="true" viewBox="0 0 24 24">
+									<path d="M12 21s7-6.1 7-13a7 7 0 1 0-14 0c0 6.9 7 13 7 13Z"></path>
+									<circle cx="12" cy="8" r="2.3"></circle></svg
+								><span>C/ Los Mateos, 1 · 30564 Lorquí, Murcia</span></a
+							>
+						</div>
+					</div>
+					<form class="contact-form reveal">
+						<label
+							>Nombre o empresa<input
+								type="text"
+								name="name"
+								required
+								placeholder="¿Con quién hablamos?" /></label
+						><label
+							>Email<input
+								type="email"
+								name="email"
+								required
+								placeholder="tu@email.com" /></label
+						><label
+							>Tu proyecto<textarea
+								name="message"
+								required
+								rows="4"
+								placeholder="Cuéntanos qué necesitas..."
+							></textarea></label
+						><button class="button button--yellow" type="submit">
+							Enviar consulta <span>→</span>
+						</button>
+						<p class="form-status" role="status"></p>
+					</form>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="container footer__inner">
+				<a
+					class="brand brand--footer"
+					href="#inicio"
+					aria-label="VerdeForma, inicio"
+					><img class="brand__logo" src="/assets/logo-aux.svg" alt="VerdeForma"
+				/></a>
+				<p>Packaging hecho para funcionar.</p>
+				<span>© 2026 Auxiliar Manipulador del Cartón</span>
+			</div>
+		</footer>
+		<a class="back-to-top" href="#inicio" aria-label="Volver al inicio"
+			>↑<span>Inicio</span></a
+		>
+		<script type="module" src="/js/main.js"></script>
+	</body>
+</html>
