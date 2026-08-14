@@ -149,3 +149,6 @@ El archivo `database/schema.sql` contiene la tabla `contact_requests` para Postg
 - Email: info@laauxiliar.es
 
 La información se tomó de la página pública de aviso legal de `laauxiliar.es` y la narrativa de VerdeForma se redactó de forma original.
+
+Las credenciales de servicios externos deben configurarse mediante variables de entorno y nunca incluirse en este repositorio.
+

@@ -43,4 +43,6 @@ pids/
 *.sln.docstates
 Thumbs.db
 Desktop.ini
+desktop.ini
+!DESKTOP.ini
 .DS_Store

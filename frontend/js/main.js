@@ -3,6 +3,13 @@ menuButton?.addEventListener('click',()=>{const isOpen=nav.classList.toggle('is-
 document.querySelectorAll('.nav a').forEach((link)=>link.addEventListener('click',()=>{nav.classList.remove('is-open');menuButton?.setAttribute('aria-expanded','false')}));
 const header=document.querySelector('.site-header');
 window.addEventListener('scroll',()=>header?.classList.toggle('is-scrolled',window.scrollY>90),{passive:true});
+const heroCopy=document.querySelector('.hero__copy');
+if(heroCopy){heroCopy.classList.remove('reveal');const heroElements=[[heroCopy.querySelector('h1'),'0ms'],[heroCopy.querySelector('.hero__lead'),'180ms'],[heroCopy.querySelector('.hero__actions'),'380ms']];heroElements.forEach(([element,delay])=>{if(!element)return;element.classList.add('reveal');element.style.setProperty('--reveal-delay',delay)});document.querySelector('.hero__media')?.classList.add('reveal--fade');document.querySelector('.hero__media')?.style.setProperty('--reveal-delay','240ms')}
+const intro=document.querySelector('.intro');
+if(intro){intro.querySelectorAll('.reveal').forEach((element)=>element.classList.remove('reveal'));intro.classList.add('reveal');intro.style.setProperty('--reveal-delay','560ms')}
+document.querySelectorAll('.metrics__grid .metric,.solutions__grid .solution-card').forEach((element)=>element.classList.remove('reveal'));
+document.querySelectorAll('.metrics__grid,.solutions__grid').forEach((element)=>element.classList.add('reveal'));
+document.querySelectorAll('main section').forEach((section)=>{const reveals=[...section.querySelectorAll('.reveal')].filter((element)=>element.closest('section')===section);reveals.forEach((element,index)=>{if(!element.style.getPropertyValue('--reveal-delay'))element.style.setProperty('--reveal-delay',`${Math.min(index,3)*90}ms`)})});
 const observer=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}})},{threshold:.12});
 document.querySelectorAll('.reveal').forEach((element)=>observer.observe(element));
 const switchableVideo=document.querySelector('[data-video-switchable]');

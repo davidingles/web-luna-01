@@ -1,2 +1,6 @@
 /* Componentes y estados interactivos adicionales. */
+.reveal{transform:translateY(26px);transition:opacity .9s cubic-bezier(.22,.61,.36,1) var(--reveal-delay,0ms),transform .9s cubic-bezier(.22,.61,.36,1) var(--reveal-delay,0ms)}
+.reveal--fade{transform:none}
+.hero__copy.reveal{opacity:1;transform:none;transition:none}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}}
 .location-link{align-items:flex-start;display:flex;gap:8px;max-width:max-content;transition:color .2s,transform .2s}.location-link svg{fill:none;height:17px;margin-top:3px;stroke:var(--green);stroke-linecap:round;stroke-linejoin:round;stroke-width:1.8;width:17px}.location-link:hover{color:var(--green);transform:translateX(3px)}.slider-button.is-pressed{background:var(--yellow);box-shadow:0 0 0 6px #e9c74d2b;color:var(--ink);transform:scale(.92)}
