@@ -13,7 +13,7 @@
 		<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 		<script src="/js/catalogo.js" defer></script>
 		<style>
-			.catalog-dialog { position: relative; width: min(1120px, calc(100% - 48px)); height: min(820px, calc(100vh - 48px)); max-height: calc(100vh - 48px); }
+			.catalog-dialog { position: fixed; width: min(1120px, calc(100% - 48px)); height: min(820px, calc(100vh - 48px)); max-height: calc(100vh - 48px); }
 			.catalog-dialog__content { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); height: 100%; overflow: hidden; }
 			.catalog-dialog__content.is-quad { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); }
 			.catalog-dialog__copy { overflow: auto; justify-content: start; }
