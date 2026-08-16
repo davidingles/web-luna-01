@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Catálogo de envases y embalajes de cartón corrugado." />
+		<title>Catálogo | Auxiliar Manipuladora del Cartón</title>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="/css/reset.css" />
+		<link rel="stylesheet" href="/css/variables.css" />
+		<link rel="stylesheet" href="/css/base.css" />
+		<link rel="stylesheet" href="/css/catalogo.css" />
+		<script src="/js/catalogo.js" defer></script>
+	</head>
+	<body class="catalog-page">
+		<header class="catalog-header">
+			<div class="catalog-shell catalog-header__inner">
+				<a class="catalog-brand" href="/" aria-label="Volver al inicio">
+					<img src="/assets/logo-aux.svg" alt="Auxiliar Manipuladora del Cartón" />
+				</a>
+				<button class="catalog-menu" type="button" aria-label="Abrir menú" aria-expanded="false">
+					<span></span><span></span>
+				</button>
+				<nav class="catalog-nav" aria-label="Navegación del catálogo">
+					<a href="/">Inicio</a>
+					<a href="#coleccion">Colección</a>
+					<a href="#proyectos">A medida</a>
+					<a class="catalog-nav__cta" href="/#contacto">Solicitar presupuesto <span>→</span></a>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<section class="catalog-hero">
+				<div class="catalog-shell catalog-hero__layout">
+					<div>
+						<p class="catalog-eyebrow">Packaging que funciona</p>
+						<h1>Soluciones de cartón que <em>hacen visible tu producto.</em></h1>
+						<p class="catalog-hero__lead">Explora una selección de estuches, cajas y expositores fabricados para proteger, transportar y destacar cada proyecto.</p>
+						<a class="catalog-button" href="#coleccion">Ver catálogo <span>↓</span></a>
+					</div>
+					<aside class="catalog-hero__card" aria-label="Ventajas del catálogo">
+						<strong>23</strong><span>formatos para inspirar tu próximo envase</span>
+						<div><b>100%</b><small>cartón reciclable</small></div>
+						<div><b>A medida</b><small>desde el diseño hasta la entrega</small></div>
+					</aside>
+				</div>
+			</section>
+			<section class="catalog-collection" id="coleccion" aria-labelledby="catalog-title">
+				<div class="catalog-shell">
+					<div class="catalog-section-heading">
+						<div><p class="catalog-eyebrow">Colección</p><h2 id="catalog-title">Encuentra el formato adecuado.</h2></div>
+						<p>Filtra por categoría o busca una referencia. Selecciona cualquier pieza para conocer su aplicación.</p>
+					</div>
+					<div class="catalog-toolbar">
+						<div class="catalog-filters" role="group" aria-label="Filtrar catálogo por categoría">
+							<button class="is-active" type="button" data-filter="todos">Todos <span>23</span></button>
+							<button type="button" data-filter="Estuches">Estuches <span>13</span></button>
+							<button type="button" data-filter="Cajas">Cajas <span>2</span></button>
+							<button type="button" data-filter="Expositores">Expositores <span>8</span></button>
+						</div>
+						<label class="catalog-search"><span class="sr-only">Buscar en el catálogo</span><input type="search" placeholder="Buscar referencia" autocomplete="off" /></label>
+					</div>
+					<p class="catalog-results" aria-live="polite"></p>
+					<div class="catalog-grid" aria-live="polite"></div>
+				</div>
+			</section>
+			<section class="catalog-projects" id="proyectos">
+				<div class="catalog-shell catalog-projects__layout">
+					<div><p class="catalog-eyebrow">Tu proyecto</p><h2>¿Necesitas una solución única?</h2></div>
+					<p>Adaptamos las medidas, el troquel, la impresión y la resistencia de cada pieza a tu producto y a su recorrido logístico.</p>
+					<a class="catalog-button catalog-button--light" href="/#contacto">Cuéntanos tu idea <span>→</span></a>
+				</div>
+			</section>
+		</main>
+		<footer class="catalog-footer"><div class="catalog-shell"><img src="/assets/logo-aux.svg" alt="Auxiliar Manipuladora del Cartón" /><p>Envases y embalajes de cartón corrugado · Murcia</p><a href="/#contacto">Contacto</a></div></footer>
+		<dialog class="catalog-dialog" aria-labelledby="dialog-title">
+			<button class="catalog-dialog__close" type="button" aria-label="Cerrar ficha">×</button>
+			<div class="catalog-dialog__content"></div>
+		</dialog>
+	</body>
+</html>
